@@ -1,0 +1,149 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* NovaHeaven Homestay Design System
+   Warm terracotta, earthy greens, cream palette
+   All colors in HSL format
+*/
+
+@layer base {
+  :root {
+    /* Warm cream background */
+    --background: 39 45% 96%;
+    --foreground: 25 30% 15%;
+
+    /* Card with slightly warmer cream */
+    --card: 39 40% 98%;
+    --card-foreground: 25 30% 15%;
+
+    --popover: 39 40% 98%;
+    --popover-foreground: 25 30% 15%;
+
+    /* Terracotta primary */
+    --primary: 12 65% 45%;
+    --primary-foreground: 39 45% 96%;
+
+    /* Heritage Brown secondary - previously Green */
+    --secondary: 28 35% 25%;
+    --secondary-foreground: 39 45% 96%;
+
+    /* Warm muted tones */
+    --muted: 35 30% 90%;
+    --muted-foreground: 25 20% 40%;
+
+    /* Brown accent */
+    --accent: 28 40% 30%;
+    --accent-foreground: 39 45% 96%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 35 25% 85%;
+    --input: 35 25% 85%;
+    --ring: 12 65% 45%;
+
+    --radius: 0.75rem;
+
+    /* Custom homestay tokens */
+    --terracotta: 12 65% 45%;
+    --terracotta-light: 12 55% 65%;
+    --terracotta-dark: 12 70% 35%;
+    --earth-green: 28 35% 25%;
+    /* Keeping variable name for compatibility but changing value */
+    --earth-green-light: 28 30% 40%;
+    --cream: 39 45% 96%;
+    --cream-dark: 35 35% 88%;
+    --warm-brown: 25 40% 25%;
+  }
+
+  .dark {
+    --background: 25 30% 10%;
+    --foreground: 39 35% 92%;
+
+    --card: 25 25% 15%;
+    --card-foreground: 39 35% 92%;
+
+    --popover: 25 25% 15%;
+    --popover-foreground: 39 35% 92%;
+
+    --primary: 12 55% 55%;
+    --primary-foreground: 25 30% 10%;
+
+    --secondary: 145 30% 45%;
+    --secondary-foreground: 25 30% 10%;
+
+    --muted: 25 20% 20%;
+    --muted-foreground: 35 20% 65%;
+
+    --accent: 145 35% 40%;
+    --accent-foreground: 25 30% 10%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 25 20% 25%;
+    --input: 25 20% 25%;
+    --ring: 12 55% 55%;
+
+    --terracotta: 12 55% 55%;
+    --terracotta-light: 12 50% 70%;
+    --terracotta-dark: 12 60% 40%;
+    --earth-green: 145 30% 45%;
+    --earth-green-light: 145 25% 55%;
+    --cream: 39 30% 15%;
+    --cream-dark: 35 25% 12%;
+    --warm-brown: 25 35% 75%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', 'Noto Sans Tamil', system-ui, sans-serif;
+  }
+
+  /* Smooth scrolling */
+  /* Smooth scrolling handled by JS */
+  /* html {
+    scroll-behavior: smooth;
+  } */
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-md border border-border/50 shadow-lg;
+  }
+
+  .gradient-overlay {
+    background: linear-gradient(to bottom,
+        hsl(var(--warm-brown) / 0.4) 0%,
+        hsl(var(--warm-brown) / 0.6) 50%,
+        hsl(var(--warm-brown) / 0.8) 100%);
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg,
+        hsl(var(--primary)) 0%,
+        hsl(var(--terracotta-light)) 100%);
+  }
+}
+
+@layer utilities {
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+}
